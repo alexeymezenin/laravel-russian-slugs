@@ -1,6 +1,7 @@
 {
-    "name": "root/russian-seo-slugs",
+    "name": "alexeymezenin/russianseoslugs",
     "description": "Russian SEO friendly slugs",
+    "keywords": ["laravel", "russian","cyrillic","seo","url","slug","yandex","google"],
     "license": "MIT",
     "authors": [
         {
