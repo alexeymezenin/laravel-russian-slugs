@@ -1,0 +1,15 @@
+{
+    "name": "root/russian-seo-slugs",
+    "description": "Russian SEO friendly slugs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Mezenin",
+            "email": "alexeymezenin@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
