@@ -11,6 +11,14 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.5",
+        "illuminate/config": "^5.0",
+        "illuminate/database": "^5.0",
+        "illuminate/support": "^5.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "AlexeyMezenin\\RussianSeoSlugs\\": "src/"
+        }
     }
 }
