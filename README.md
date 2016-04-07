@@ -1,9 +1,14 @@
 
+#Introduction
+This package offers easy to use russian Wikipedia-like slugs 'как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs.
 
+* [Installation](#Installation)
+* [Using slugs](#Using-slugs)
+* [Configuration](#Configuration)
+* [Commands](#Commands)
 
-
-
-#Installation
+<a name="Installation"></a>
+##Installation
 
 Start with editing your Laravel project's composer.json file to require package:
 
@@ -34,6 +39,7 @@ Finally, you need register config file and slug-related commands:
 php artisan vendor:publish
 ```
 
+<a name="Using-slugs"></a>
 #Using slugs
 
 To use slugs you need to update your models with `use` clause:
@@ -77,10 +83,16 @@ $article = findBySlug($slug);
 echo $article->name; // Will output "How to grow a tree?"
 ```
 
-#Configuration
+<a name="Configuration"></a>
+##Configuration
 
 To configure a package you should edit `config/seoslugs.php`
 
-#Copyright
+<a name="Commands"></a>
+##Commands
+
+
+
+##Copyright
 
 RussianSeoSlugs was written by Alexey Mezenin and released under the MIT License.
