@@ -1,17 +1,17 @@
 
-###Introduction
-This package offers easy to use russian Wikipedia-like slugs 'Как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs and their variations with lowercased letters and using different separators.
+###Вступление
+Этот пакет позволяет использовать слаги (slugs) аналогичные используемым на сайте Wikipedia: 'Как\_вырастить\_дерево' или транслит по правилам Яндекса: 'kak-vyrastis-derevo', а также их вариации со строчными буквами с использованием различных символов разделения.
 
-* [Installation](#Installation)
-* [Using slugs](#Using-slugs)
-* [Configuration](#Configuration)
-* [Commands](#Commands)
+* [Установка](#Installation)
+* [Использование](#Using-slugs)
+* [Настройка](#Configuration)
+* [Команды](#Commands)
 
 
 <a name="Installation"></a>
-###Installation
+###Установка
 
-Start with editing your Laravel project's composer.json file to require package:
+Добавьте в файл composer.json вашего Laravel проекта в раздел require следующую строку:
 
 ```
 "require": {
@@ -19,13 +19,13 @@ Start with editing your Laravel project's composer.json file to require package:
 }
 ```
 
-After that update Composer by running this command:
+Запустите эту команду для установки пакета:
 
 ```
 composer update
 ```
 
-Now, add insert these two lines into provider and aliases arrays of `config/app.php`:
+Затем добавьте эти строки в разделы provider и aliases файла `config/app.php`:
 
 ```
 'providers' => [
@@ -35,7 +35,7 @@ Now, add insert these two lines into provider and aliases arrays of `config/app.
     'Slug' => AlexeyMezenin\RussianSeoSlugs\Facade::class,
 ```
 
-Finally, you need register config file and slug-related commands:
+Наконец, зарегистрируйте конфигурационный файл и команды с помощью:
 ```
 php artisan vendor:publish
 ```

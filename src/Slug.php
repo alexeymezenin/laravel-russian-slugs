@@ -9,12 +9,19 @@ class Slug
         
         $slug = str_replace(' ', config('seoslug.delimiter'), $url);
         $slug = preg_replace("/[^0-9а-яёa-z_-]/iu", '', $slug);
-        
-        // Keep capital letters or modify slug to lowercase
-        $slug = config('seoslug.keepCapitals') ? $slug : $slug = mb_strtolower($slug);
-        
-        // Keep russian letters or modify create translit slug
-        return config('seoslug.urlType') === 2 ? self::toTranslit($slug) : $slug;
+
+        switch (config('seoslug.urlType')) {
+            case 1:
+                $slug = mb_strtolower($slug);
+                break;
+            case 2: // Nothing changes
+                break;
+            case 3: // Translit using Yandex rules
+                $slug = self::toTranslit(mb_strtolower($slug));
+                break;
+        }
+
+        return $slug;
     }
 
     public static function toTranslit($string)

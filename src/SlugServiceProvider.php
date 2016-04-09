@@ -6,12 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class SlugServiceProvider extends ServiceProvider
 {
-    protected $commands = [
-        'AlexeyMezenin\RussianSeoSlugs\Commands\AutoCommand',
-        'AlexeyMezenin\RussianSeoSlugs\Commands\CreateSlugMigrationCommand',
-        'AlexeyMezenin\RussianSeoSlugs\Commands\ReslugTableCommand',
-    ];
-
     /**
      * Bootstrap the application services.
      *
@@ -20,7 +14,7 @@ class SlugServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/seoslug.php' => config_path('seoslug.php'),
+            __DIR__.'/Config/seoslug.php' => config_path('seoslug.php'),
             ], 'config');
     }
 
@@ -31,7 +25,6 @@ class SlugServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands($this->commands);
 
         $this->mergeConfigFrom( __DIR__.'/Config/seoslug.php', 'seoslug');
 
