@@ -19,7 +19,7 @@ class ReslugTableCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Recreating slugs for a specified table';
+    protected $description = 'Creating or recreating slugs for a specified table';
 
     /**
      * Create a new command instance.

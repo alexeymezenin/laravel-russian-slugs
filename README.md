@@ -95,7 +95,13 @@ To configure a package you should edit `config/seoslugs.php`
 <a name="Commands"></a>
 ###Commands
 
+There are three commands available with the package:
 
+`php artisan slug:auto {table} {column}` command creates and executes migration and reslugs a table.
+
+`slug:migration {table}` command creates migration to add a slug column.
+
+`slug:reslug {table} {column}` command creating or recreating slugs for a specified table
 
 ###Copyright
 
