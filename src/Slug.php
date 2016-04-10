@@ -4,26 +4,22 @@ namespace AlexeyMezenin\RussianSeoSlugs;
 
 class Slug
 {
+
+    // Building a slug
 	public static function url($url)
     {
-        
-        $slug = str_replace(' ', config('seoslug.delimiter'), $url);
+        // Cleaning URL from inapropriate symbols
         $slug = preg_replace("/[^0-9а-яёa-z_-]/iu", '', $slug);
+        $slug = str_replace(' ', config('seoslug.delimiter'), $url);
 
-        switch (config('seoslug.urlType')) {
-            case 1:
-                $slug = mb_strtolower($slug);
-                break;
-            case 2: // Nothing changes
-                break;
-            case 3: // Translit using Yandex rules
-                $slug = self::toTranslit(mb_strtolower($slug));
-                break;
-        }
+        // Building slug based on configuration
+        $slug = (config('seoslug.keepCapitals') == false) ? mb_strtolower($slug) : $slug;
+        $slug = (config('seoslug.urlType') == 2) ? self::toTranslit($slug) : $slug;
 
         return $slug;
     }
 
+    // Converts string to translit using Yandex rules
     public static function toTranslit($string)
     {
         $replace = array(
