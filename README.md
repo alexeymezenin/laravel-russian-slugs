@@ -54,7 +54,7 @@ class Articles extends Model
     use SlugTrait;
 ```
 
-To **create new object** with a slug use `sluggity()` methof will add slug to your model, based on `name` column:
+To **create new model** with a slug use `sluggity()` method. This will add slug to your model, based on `name` column:
 
 ```
 $article = new Article;
@@ -63,7 +63,7 @@ $article->sluggify('name');
 $article->save();
 ```
 
-You can **update existing object** and add a slug:
+You can **update existing model** and add a slug:
 ```
 $article = Article::find(1);
 $article->sluggify('name');
@@ -81,7 +81,7 @@ $article->update([
 `findBySlug` allows you to find a model by slugs:
 ```
 $slug = 'how-to-grow-a-tree';
-$article = findBySlug($slug);
+$article = Article::findBySlug($slug);
 echo $article->name; // Will output "How to grow a tree?"
 ```
 

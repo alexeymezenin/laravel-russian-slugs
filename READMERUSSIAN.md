@@ -4,7 +4,7 @@
 
 * [Установка](#Installation)
 * [Использование](#Using-slugs)
-* [Настройка](#Configuration)
+* [Конфигурация](#Configuration)
 * [Команды](#Commands)
 
 
@@ -44,7 +44,7 @@ php artisan vendor:publish
 <a name="Using-slugs"></a>
 ###Using slugs
 
-To use slugs you need to update your models with `use` clause:
+Чтобы использовать пакет, добавьте в свои модели трейт:
 
 ```
 use AlexeyMezenin\RussianSeoSlugs\SlugTrait;
@@ -54,7 +54,7 @@ class Articles extends Model
     use SlugTrait;
 ```
 
-To **create new object** with a slug use `sluggity()` methof will add slug to your model, based on `name` column:
+Чтобы **создать новый объект** со слагом, используйте метод `sluggity()`. Например, этот код создаст слаг, основанный на колонке `name`:
 
 ```
 $article = new Article;
@@ -63,7 +63,7 @@ $article->sluggify('name');
 $article->save();
 ```
 
-You can **update existing object** and add a slug:
+Вы можете **добавить слаг к существующей модели**:
 ```
 $article = Article::find(1);
 $article->sluggify('name');
@@ -78,25 +78,25 @@ $article->update([
     ]);
 ```
 
-`findBySlug` allows you to find a model by slugs:
+`findBySlug` позволяет осуществлять поиск по слагу:
 ```
 $slug = 'how-to-grow-a-tree';
-$article = findBySlug($slug);
+$article = Article::findBySlug($slug);
 echo $article->name; // Will output "How to grow a tree?"
 ```
 
 
 <a name="Configuration"></a>
-###Configuration
+###Конфигурация
 
-To configure a package you should edit `config/seoslugs.php`
+Все настройки пакета находятся в файле `config/seoslugs.php`
 
 
 <a name="Commands"></a>
-###Commands
+###Команды
 
 
 
-###Copyright
+###Копирайт
 
-RussianSeoSlugs was written by Alexey Mezenin and released under the MIT License.
+Пакет RussianSeoSlugs был создан Алексеем Мезененым и распространяется по лицензии MIT.
