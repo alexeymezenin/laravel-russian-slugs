@@ -7,15 +7,6 @@ use AlexeyMezenin\RussianSeoSlugs\Slug;
 
 class SlugTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
-    {
-        $this->assertTrue(true);
-    }
     
     public function testRemovingInappropriateSymbols(){
         $s = new Slug('А!Б#В$A%B{C');
