@@ -3,7 +3,7 @@
 return [
     // 1 - '/категория/книги_в_москве'
     // 2 - '/kategoriya/knigi_v_moskve - translit using Yandex rules
-    'urlType' => 2,
+    'urlType' => 1,
 
     // Keep capital letters
     'keepCapitals' => false,
