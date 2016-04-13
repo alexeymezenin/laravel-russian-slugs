@@ -41,6 +41,24 @@ class SlugTest extends TestCase
             Slug::getSlug('Ничего на свете лучше нету', '_', 1, false)
         );
 
-        
+        $this->assertEquals(
+            'чем-бродить-друзьям-по-белу-свету',
+            Slug::getSlug('Чем бродить друзьям по белу свету', '-', 1, false)
+        );
+
+        $this->assertEquals(
+            'Тем_кто_дружен',
+            Slug::getSlug('Тем, кто дружен', '_', 1, true)
+        );
+
+        $this->assertEquals(
+            'Ne-strashny-trevogi',
+            Slug::getSlug('Не страшны тревоги...', '-', 2, true)
+        );
+
+        $this->assertEquals(
+            'nam_lyubye_dorogi_dorogi',
+            Slug::getSlug('Нам любые дороги дороги!', '_', 2, false)
+        );
     }
 }
