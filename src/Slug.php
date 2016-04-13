@@ -4,7 +4,7 @@ namespace AlexeyMezenin\RussianSeoSlugs;
 
 class Slug
 {
-    private $url;
+    public $slug;
 
     private $delimiter;
 
@@ -12,37 +12,25 @@ class Slug
 
     private $keepCapitals;
 
-    public function __construct($url, $delimiter = null, $urlType = null, $keepCapitals = null)
+    public function __construct($stringToSlug, $delimiter = null, $urlType = null, $keepCapitals = null)
     {
-        $this->slug = $url;
+        $this->slug = $stringToSlug;
         $this->delimiter = is_null($delimiter) ? config('seoslug.delimiter') : $delimiter;
         $this->urlType = is_null($urlType) ? config('seoslug.urlType') : $urlType;
         $this->keepCapitals = is_null($keepCapitals) ? config('seoslug.keepCapitals') : $keepCapitals;
     }
 
     // Building a slug
-	public static function url(
-        $url,
-        $delimiter    = null,
-        $urlType      = null,
-        $keepCapitals = null
-    ) {
-        self::__construct($url, $delimiter, $urlType, $keepCapitals);
+	public static function getSlug($stringToSlug, $delimiter = null, $urlType = null, $keepCapitals = null)
+    {
+        $obj = new self($stringToSlug, $delimiter, $urlType, $keepCapitals);
 
-        $this->slug->removeInappropriateSymbols()
-                   ->replaceSpacesWithDelimiter()
-                   ->toLower()
-                   ->toTranslit();
+        $obj->replaceSpacesWithDelimiter()
+            ->removeInappropriateSymbols()
+            ->toLower()
+            ->toTranslit();
 
-//        // Cleaning URL from inapropriate symbols
-//        $slug = preg_replace("/[^0-9а-яёa-z_-]/iu", '', $slug);
-//        $slug = str_replace(' ', $delimilter, $url);
-//
-//        // Building slug based on configuration
-//        $slug = ($keepCapitals == false) ? mb_strtolower($slug) : $slug;
-//        $slug = ($urlType == 2) ? self::toTranslit($slug) : $slug;
-
-        return $this->slug;
+        return $obj->slug;
     }
 
     public function removeInappropriateSymbols(){

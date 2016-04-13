@@ -7,7 +7,7 @@ use AlexeyMezenin\RussianSeoSlugs\Slug;
 
 class SlugTest extends TestCase
 {
-    
+
     public function testRemovingInappropriateSymbols(){
         $s = new Slug('А!Б#В$A%B{C');
         $this->assertEquals('АБВABC', $s->removeInappropriateSymbols()->slug);
@@ -32,5 +32,15 @@ class SlugTest extends TestCase
 
         $s = new Slug('абвгдеёжзийклмнопрстуфхцчшщъыьэюя', null, 1);
         $this->assertEquals('абвгдеёжзийклмнопрстуфхцчшщъыьэюя', $s->toTranslit()->slug);
+    }
+
+    public function testDoesSlugUrlStaticCallWork()
+    {
+        $this->assertEquals(
+            'ничего_на_свете_лучше_нету',
+            Slug::getSlug('Ничего на свете лучше нету', '_', 1, false)
+        );
+
+        
     }
 }
