@@ -1,6 +1,7 @@
 {
     "name": "root/russian-seo-slugs",
     "description": "Russian SEO friendly slugs",
+    "keywords": ["seo", "url", "russian", "cyrillic", "slugs", "google", "yandex", "translit"],
     "license": "MIT",
     "authors": [
         {
@@ -11,5 +12,10 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlexeyMezenin\\RussianSeoSlugs\\": "src/"
+        }
     }
 }

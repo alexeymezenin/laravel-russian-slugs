@@ -8,7 +8,8 @@ return [
     // Keep capital letters
     'keepCapitals' => false,
 
-    // Spaces will be replaced with this delimiter
+    // Spaces will be replaced with this delimiter,
+    // available delimiters are '-' and '_'
     'delimiter' => '_',
 
     // Name of a table column where slugs will be stored
