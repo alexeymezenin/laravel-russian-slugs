@@ -65,6 +65,9 @@ class SlugsTest extends TestCase
 
         $s = new Slugs('абвгдеёжзийклмнопрстуфхцчшщъыьэюя');
         $this->assertEquals('абвгдеёжзийклмнопрстуфхцчшщъыьэюя', $s->toTranslit()->slug);
+
+        $s = new Slugs('АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ', null, 2, true);
+        $this->assertEquals('ABVGDEEZhZIIKLMNOPRSTUFKhTsChShSchYEYuYa', $s->toTranslit()->slug);
     }
 }
 
