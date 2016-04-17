@@ -3,7 +3,6 @@
 namespace AlexeyMezenin\RussianSeoSlugs\Commands;
 
 use Illuminate\Console\Command;
-use AlexeyMezenin\RussianSeoSlugs\Slug;
 
 class ReslugTableCommand extends Command
 {
@@ -47,7 +46,7 @@ class ReslugTableCommand extends Command
                 //$this->info(PHP_EOL.$column.': '.$row->$column.PHP_EOL.Slug::url($row->$column).PHP_EOL);
 
                 \DB::table($table)->where($column, $row->$column)
-                    ->update([config('seoslug.slugColumnName') => Slug::url($row->$column)]);
+                    ->update([config('seoslug.slugColumnName') => \Slug::build($row->$column)]);
             }
         } catch (Exception $e) {
             $this->error($e->getMessage());
