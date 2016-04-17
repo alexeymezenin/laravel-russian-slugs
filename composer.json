@@ -1,6 +1,6 @@
 {
-    "name": "root/russian-seo-slugs",
-    "description": "Russian SEO friendly slugs",
+    "name": "alexeymezenin/laravelrussianslugs",
+    "description": "Russian SEO friendly slugs for Laravel 5",
     "keywords": ["seo", "url", "russian", "cyrillic", "slugs", "google", "yandex", "translit"],
     "license": "MIT",
     "authors": [
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AlexeyMezenin\\RussianSeoSlugs\\": "src/"
+            "AlexeyMezenin\\LaravelRussianSlugs\\": "src/"
         }
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace AlexeyMezenin\RussianSeoSlugs\Commands;
+namespace AlexeyMezenin\LaravelRussianSlugs\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Console\Migrations\BaseCommand;
-use AlexeyMezenin\RussianSeoSlugs\SlugMigrationCreator;
+use AlexeyMezenin\LaravelRussianSlugs\SlugMigrationCreator;
 
 class CreateSlugMigrationCommand extends BaseCommand
 {

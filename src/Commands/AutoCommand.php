@@ -1,9 +1,9 @@
 <?php
 
-namespace AlexeyMezenin\RussianSeoSlugs\Commands;
+namespace AlexeyMezenin\LaravelRussianSlugs\Commands;
 
 use Illuminate\Console\Command;
-use AlexeyMezenin\RussianSeoSlugs\Slug;
+use AlexeyMezenin\LaravelRussianSlugs\Slug;
 
 
 class AutoCommand extends Command

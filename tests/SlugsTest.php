@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use AlexeyMezenin\RussianSeoSlugs\Slugs;
+use AlexeyMezenin\LaravelRussianSlugs\Slugs;
 
 class SlugsTest extends TestCase
 {

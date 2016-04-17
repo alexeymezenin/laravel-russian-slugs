@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexeyMezenin\RussianSeoSlugs;
+namespace AlexeyMezenin\LaravelRussianSlugs;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\App;

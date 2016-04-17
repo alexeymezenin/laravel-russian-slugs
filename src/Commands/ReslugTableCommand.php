@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexeyMezenin\RussianSeoSlugs\Commands;
+namespace AlexeyMezenin\LaravelRussianSlugs\Commands;
 
 use Illuminate\Console\Command;
 
