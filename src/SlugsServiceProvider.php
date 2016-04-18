@@ -15,7 +15,7 @@ class SlugsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/Config/seoslug.php' => config_path('seoslug.php'),
+            __DIR__.'/../config/seoslug.php' => config_path('seoslug.php'),
             ], 'config');
     }
 
@@ -27,11 +27,11 @@ class SlugsServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->mergeConfigFrom( __DIR__.'/Config/seoslug.php', 'seoslug');
+        $this->mergeConfigFrom( __DIR__.'/../config/seoslug.php', 'seoslug');
 
         App::bind('slug', function($app, $parameters)
         {
-            return new \AlexeyMezenin\RussianSeoSlugs\Slugs($parameters);
+            return new \AlexeyMezenin\LaravelRussianSlugs\Slugs($parameters);
         });
     }
 }

@@ -3,7 +3,6 @@
 namespace AlexeyMezenin\LaravelRussianSlugs\Commands;
 
 use Illuminate\Console\Command;
-use AlexeyMezenin\LaravelRussianSlugs\Slug;
 
 
 class AutoCommand extends Command
