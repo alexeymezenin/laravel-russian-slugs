@@ -6,7 +6,7 @@ return [
     'delimiter' => '_',
 
     // 1 - '/категория/книги_в_москве'
-    // 2 - '/kategoriya/knigi_v_moskve - translit using Yandex rules
+    // 2 - '/kategoriya/knigi_v_moskve' - translit using Yandex rules
     'urlType' => 1,
 
     // Keep capital letters

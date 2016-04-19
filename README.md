@@ -15,7 +15,7 @@ Start with editing your Laravel project's composer.json file to require package:
 
 ```
 "require": {
-    "alexeymezenin/russianseoslugs": "1.*"
+    "alexeymezenin/laravel-russian-slugs": "1.*"
 }
 ```
 
@@ -25,14 +25,14 @@ After that update Composer by running this command:
 composer update
 ```
 
-Now, add insert these two lines into provider and aliases arrays of `config/app.php`:
+Now, add insert these two lines into provider and aliases arrays in `config/app.php`:
 
 ```
 'providers' => [
-    AlexeyMezenin\RussianSeoSlugs\SlugServiceProvider::class,
+    AlexeyMezenin\LaravelRussianSlugs\SlugServiceProvider::class,
 
 'aliases' => [
-    'Slug' => AlexeyMezenin\RussianSeoSlugs\Facade::class,
+    'Slug' => AlexeyMezenin\LaravelRussianSlugs\Facade::class,
 ```
 
 Finally, you need register config file and slug-related commands:
@@ -47,7 +47,7 @@ php artisan vendor:publish
 To use slugs you need to update your models with `use` clause:
 
 ```
-use AlexeyMezenin\RussianSeoSlugs\SlugTrait;
+use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
 
 class Articles extends Model
 {
@@ -70,15 +70,21 @@ $article->sluggify('name');
 $article->save();
 ```
 
+If slug already exists, but you need to recreate it, use forced sluggify:
+
+```
+$article->sluggify('name', true);
+```
+
 Alternatively, you can use `Slug` facade to manually work with slugs:
 ```
 $article = Article::find(1);
 $article->update([
-    'slug' => Slug::url($article->name)
+    'slug' => Slug::build($article->name)
     ]);
 ```
 
-`findBySlug` allows you to find a model by slugs:
+`findBySlug()` method allows you to find a model by it's slug:
 ```
 $slug = 'how-to-grow-a-tree';
 $article = Article::findBySlug($slug);
@@ -89,15 +95,26 @@ echo $article->name; // Will output "How to grow a tree?"
 <a name="Configuration"></a>
 ###Configuration
 
-To configure a package you should edit `config/seoslugs.php`
+To configure a package you should edit `config/seoslugs.php` file.
 
+`delimiter` is a symbol which replaces all spaces in a string. By default it's '_', but also can be '-'.
+
+`urlType`
+
+Default is **1**. Used for URLs like `/категория/книги_в_москве`
+
+**2** is for traslitterated URLs like `/kategoriya/knigi_v_moskve`, Yandex rules used.
+
+`keepCapitals` is `false` by default. When `true` it keeps capital letters in a string, for example: `/книги_в_Москве`
+
+`slugColumnName` is a name of a slugs column. `slug` by default.
 
 <a name="Commands"></a>
 ###Commands
 
 There are three commands available with the package:
 
-`php artisan slug:auto {table} {column}` command creates and executes migration and reslugs a table.
+`php artisan slug:auto {table} {column}` command creates and executes migration, reslugs a table.
 
 `slug:migration {table}` command creates migration to add a slug column.
 
