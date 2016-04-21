@@ -15,7 +15,7 @@
 
 ```
 "require": {
-    "alexeymezenin/russianseoslugs": "1.*"
+    "alexeymezenin/laravel-russian-slugs": "1.*"
 }
 ```
 
@@ -29,10 +29,10 @@ composer update
 
 ```
 'providers' => [
-    AlexeyMezenin\RussianSeoSlugs\SlugServiceProvider::class,
+    AlexeyMezenin\LaravelRussianSlugs\SlugServiceProvider::class,
 
 'aliases' => [
-    'Slug' => AlexeyMezenin\RussianSeoSlugs\Facade::class,
+    'Slug' => AlexeyMezenin\LaravelRussianSlugs\Facade::class,
 ```
 
 Наконец, зарегистрируйте конфигурационный файл и команды с помощью:
@@ -47,7 +47,7 @@ php artisan vendor:publish
 Чтобы использовать пакет, добавьте в свои модели трейт:
 
 ```
-use AlexeyMezenin\RussianSeoSlugs\SlugTrait;
+use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
 
 class Articles extends Model
 {
@@ -70,7 +70,7 @@ $article->sluggify('name');
 $article->save();
 ```
 
-Alternatively, you can use `Slug` facade to manually work with slugs:
+Как альтернативу, вы можете использовать фасад `Slug` для того, чтобы работать со слагами вручную:
 ```
 $article = Article::find(1);
 $article->update([
