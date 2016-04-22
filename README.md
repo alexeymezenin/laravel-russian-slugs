@@ -1,6 +1,6 @@
 
 ###Introduction
-This package offers easy to use russian Wikipedia-like slugs 'Как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs and their variations with lowercased letters and using different separators.
+This package offers easy to use Wikipedia-like Russian slugs like 'Как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs and their variations with lowercased letters and different separators.
 
 * [Installation](#Installation)
 * [Using slugs](#Using-slugs)
