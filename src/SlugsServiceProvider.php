@@ -15,9 +15,9 @@ class SlugsServiceProvider extends ServiceProvider
      * @var array List of commands to register.
      */
     protected $commands = [
-        'Vendor\Package\Commands\MyCommand',
-        'Vendor\Package\Commands\FooCommand',
-        'Vendor\Package\Commands\BarCommand',
+        'AlexeyMezenin\LaravelRussianSlugs\Commands\AutoCommand',
+        'AlexeyMezenin\LaravelRussianSlugs\Commands\CreateSlugMigrationCommand',
+        'AlexeyMezenin\LaravelRussianSlugs\Commands\ReslugTableCommand',
     ];
 
     /**
