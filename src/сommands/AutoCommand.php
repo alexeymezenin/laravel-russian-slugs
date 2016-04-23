@@ -4,7 +4,10 @@ namespace AlexeyMezenin\LaravelRussianSlugs\Commands;
 
 use Illuminate\Console\Command;
 
-
+/**
+ * Class AutoCommand
+ * @package AlexeyMezenin\LaravelRussianSlugs\Commands
+ */
 class AutoCommand extends Command
 {
     /**

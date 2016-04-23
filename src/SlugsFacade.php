@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class SlugsFacade
  *
- * @package AlexeyMezenin\RussianSeoSlugs
+ * @package AlexeyMezenin\LaravelRussianSlugs
  */
 class SlugsFacade extends Facade {
 

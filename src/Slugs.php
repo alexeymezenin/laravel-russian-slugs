@@ -4,7 +4,7 @@ namespace AlexeyMezenin\LaravelRussianSlugs;
 
 /**
  * Class Slugs
- * @package AlexeyMezenin\RussianSeoSlugs
+ * @package AlexeyMezenin\LaravelRussianSlugs
  */
 class Slugs
 {
@@ -45,7 +45,7 @@ class Slugs
     }
 
     /**
-     * Builds a slug based on config.
+     * Build a slug based on config.
      *
      * @param string $stringToSlug Original string which will be converted to a slug
      * @param string $delimiter Slug delimiter '-' or '_'
@@ -66,7 +66,7 @@ class Slugs
     }
 
     /**
-     * Removes all symbols except russian and latin letters, numbers, '-' and '_' in $this->slug
+     * Remove all symbols except russian and latin letters, numbers, '-' and '_' in $this->slug
      *
      * @return $this
      */
@@ -77,7 +77,7 @@ class Slugs
     }
 
     /**
-     * Replaces spaces with delimiter in $this->slug
+     * Replace spaces with delimiter in $this->slug
      * @return $this
      */
     public function replaceSpacesWithDelimiter(){
@@ -87,7 +87,7 @@ class Slugs
     }
 
     /**
-     * Converts $this->slug to lowercase when necessary
+     * Convert $this->slug to lowercase when necessary
      *
      * @return $this
      */
@@ -100,13 +100,13 @@ class Slugs
     }
 
     /**
-     * Converts $this->slug to translit using Yandex rules
+     * Convert $this->slug to translit using Yandex rules
      *
      * @return $this
      */
     public function toTranslit()
     {
-        // if slug doesn't need to be transliterated
+        // If slug doesn't need to be transliterated
         if($this->urlType === 1) {
             return $this;
         }
@@ -132,7 +132,7 @@ class Slugs
             "Я" => "Ya",
         );
 
-        // Creates slug
+        // Create the slug
         $this->slug = iconv("UTF-8","UTF-8//IGNORE", strtr($this->slug, $replace));
 
         return $this;

@@ -5,8 +5,21 @@ namespace AlexeyMezenin\LaravelRussianSlugs;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\App;
 
+/**
+ * Class SlugsServiceProvider
+ * @package AlexeyMezenin\LaravelRussianSlugs
+ */
 class SlugsServiceProvider extends ServiceProvider
 {
+    /**
+     * @var array List of commands to register.
+     */
+    protected $commands = [
+        'Vendor\Package\Commands\MyCommand',
+        'Vendor\Package\Commands\FooCommand',
+        'Vendor\Package\Commands\BarCommand',
+    ];
+
     /**
      * Bootstrap the application services.
      *
@@ -32,5 +45,8 @@ class SlugsServiceProvider extends ServiceProvider
         {
             return new \AlexeyMezenin\LaravelRussianSlugs\Slugs($parameters);
         });
+
+        // Register commands.
+        $this->commands($this->commands);
     }
 }

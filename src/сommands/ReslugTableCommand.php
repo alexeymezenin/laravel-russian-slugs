@@ -4,6 +4,10 @@ namespace AlexeyMezenin\LaravelRussianSlugs\Commands;
 
 use Illuminate\Console\Command;
 
+/**
+ * Class ReslugTableCommand
+ * @package AlexeyMezenin\LaravelRussianSlugs\Commands
+ */
 class ReslugTableCommand extends Command
 {
     /**

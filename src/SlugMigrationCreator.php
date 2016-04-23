@@ -4,6 +4,10 @@ namespace AlexeyMezenin\LaravelRussianSlugs;
 
 use Illuminate\Database\Migrations\MigrationCreator;
 
+/**
+ * Class SlugMigrationCreator
+ * @package AlexeyMezenin\LaravelRussianSlugs
+ */
 class SlugMigrationCreator extends MigrationCreator
 {
     /**

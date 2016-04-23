@@ -6,6 +6,10 @@ use Illuminate\Console\Command;
 use Illuminate\Database\Console\Migrations\BaseCommand;
 use AlexeyMezenin\LaravelRussianSlugs\SlugMigrationCreator;
 
+/**
+ * Class CreateSlugMigrationCommand
+ * @package AlexeyMezenin\LaravelRussianSlugs\Commands
+ */
 class CreateSlugMigrationCommand extends BaseCommand
 {
     /**
