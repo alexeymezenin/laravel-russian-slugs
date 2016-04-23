@@ -15,7 +15,7 @@
 
 ```
 "require": {
-    "alexeymezenin/laravel-russian-slugs": "1.*"
+    "alexeymezenin/laravel-russian-slugs": "0.*"
 }
 ```
 
@@ -29,7 +29,7 @@ composer update
 
 ```
 'providers' => [
-    AlexeyMezenin\LaravelRussianSlugs\SlugServiceProvider::class,
+    AlexeyMezenin\LaravelRussianSlugs\SlugsServiceProvider::class,
 
 'aliases' => [
     'Slug' => AlexeyMezenin\LaravelRussianSlugs\Facade::class,
@@ -47,7 +47,7 @@ php artisan vendor:publish
 Чтобы использовать пакет, добавьте в свои модели трейт:
 
 ```
-use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
+use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 
 class Articles extends Model
 {
@@ -105,9 +105,9 @@ echo $article->name; // Will output "How to grow a tree?"
 
 `php artisan slug:auto {table} {column}` - эта команда создает и запускает миграцию, а затем автоматически создает слаги в созданной таблице.
 
-`slug:migration {table}` - эта команда создает миграцию для добавления столбца для слагов.
+`php artisan slug:migration {table}` - эта команда создает миграцию для добавления столбца для слагов.
 
-`slug:reslug {table} {column}` - эта команда создает или регенерирует слаги в указанном столбце.
+`php artisan slug:reslug {table} {column}` - эта команда создает или регенерирует слаги в указанном столбце.
 
 ###Копирайт
 

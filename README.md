@@ -15,7 +15,7 @@ Start with editing your Laravel project's composer.json file to require package:
 
 ```
 "require": {
-    "alexeymezenin/laravel-russian-slugs": "1.*"
+    "alexeymezenin/laravel-russian-slugs": "0.*"
 }
 ```
 
@@ -29,7 +29,7 @@ Now, add insert these two lines into provider and aliases arrays in `config/app.
 
 ```
 'providers' => [
-    AlexeyMezenin\LaravelRussianSlugs\SlugServiceProvider::class,
+    AlexeyMezenin\LaravelRussianSlugs\SlugsServiceProvider::class,
 
 'aliases' => [
     'Slug' => AlexeyMezenin\LaravelRussianSlugs\Facade::class,
@@ -47,7 +47,7 @@ php artisan vendor:publish
 To use slugs you need to update your models with `use` clause:
 
 ```
-use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
+use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 
 class Articles extends Model
 {
@@ -116,9 +116,9 @@ There are three commands available with the package:
 
 `php artisan slug:auto {table} {column}` command creates and executes migration, reslugs a table.
 
-`slug:migration {table}` command creates migration to add a slug column.
+`php artisan slug:migration {table}` command creates migration to add a slug column.
 
-`slug:reslug {table} {column}` command creating or recreating slugs for a specified table
+`php artisan slug:reslug {table} {column}` command creating or recreating slugs for a specified table
 
 ###Copyright
 

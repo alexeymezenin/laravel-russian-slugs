@@ -1,7 +1,7 @@
 {
     "name": "alexeymezenin/laravel-russian-slugs",
     "description": "Russian SEO friendly slugs for Laravel 5",
-    "keywords": ["seo", "url", "russian", "cyrillic", "slugs", "google", "yandex", "translit"],
+    "keywords": ["slugs", "seo", "url", "russian", "cyrillic", "google", "yandex", "translit"],
     "license": "MIT",
     "authors": [
         {
