@@ -6,7 +6,6 @@ use Illuminate\Database\Migrations\MigrationCreator;
 
 class SlugMigrationCreator extends MigrationCreator
 {
-
     /**
      * Get the migration stub file.
      *
@@ -45,5 +44,4 @@ class SlugMigrationCreator extends MigrationCreator
     {
         return __DIR__ . '/../stubs';
     }
-
 }
