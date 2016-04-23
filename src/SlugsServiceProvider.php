@@ -26,7 +26,6 @@ class SlugsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
         $this->mergeConfigFrom( __DIR__.'/../config/seoslug.php', 'seoslug');
 
         App::bind('slug', function($app, $parameters)

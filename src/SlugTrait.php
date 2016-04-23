@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 trait SlugTrait
 {
-
 	/**
 	 * Finds a model by slug.
 	 *
@@ -36,7 +35,7 @@ trait SlugTrait
 	/**
 	 * Creates or recreates slugs in a column.
 	 *
-	 * @param $column Column to work with.
+	 * @param $column Column to work with. String from this column will be converted to a slug.
 	 * @param bool $force When true, forces recreation of a slug, even if it exists.
 	 * @return $this
 	 */
