@@ -132,6 +132,7 @@ class Slugs
             "Я" => "Ya",
         );
 
+        // Creates slug
         $this->slug = iconv("UTF-8","UTF-8//IGNORE", strtr($this->slug, $replace));
 
         return $this;
