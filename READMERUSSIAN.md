@@ -32,7 +32,7 @@ composer update
     AlexeyMezenin\LaravelRussianSlugs\SlugsServiceProvider::class,
 
 'aliases' => [
-    'Slug' => AlexeyMezenin\LaravelRussianSlugs\Facade::class,
+    'Slug' => AlexeyMezenin\LaravelRussianSlugs\SlugsFacade::class,
 ```
 
 Наконец, зарегистрируйте конфигурационный файл и команды с помощью:

@@ -32,7 +32,7 @@ Now, add insert these two lines into provider and aliases arrays in `config/app.
     AlexeyMezenin\LaravelRussianSlugs\SlugsServiceProvider::class,
 
 'aliases' => [
-    'Slug' => AlexeyMezenin\LaravelRussianSlugs\Facade::class,
+    'Slug' => AlexeyMezenin\LaravelRussianSlugs\SlugsFacade::class,
 ```
 
 Finally, you need register config file and slug-related commands:
