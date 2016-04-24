@@ -81,6 +81,9 @@ class Slugs
      * @return $this
      */
     public function replaceSpacesWithDelimiter(){
+        // Replace multiple spaces with single one
+        $this->slug = preg_replace('!\s+!', ' ', $this->slug);
+
         $this->slug = str_replace(' ', $this->delimiter, $this->slug);
 
         return $this;
