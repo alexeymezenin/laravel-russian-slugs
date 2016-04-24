@@ -42,15 +42,15 @@ class ReslugTableCommand extends Command
     public function handle()
     {
         $table = $this->argument('table');
+
         $column = $this->argument('column');
 
         try {
             $allRows = \DB::table($table)->select($column)->get();
-            foreach ($allRows as $row) {
-                //$this->info(PHP_EOL.$column.': '.$row->$column.PHP_EOL.Slug::url($row->$column).PHP_EOL);
 
+            foreach ($allRows as $row) {
                 \DB::table($table)->where($column, $row->$column)
-                    ->update([config('seoslug.slugColumnName') => \Slug::build($row->$column)]);
+                     ->update([config('seoslug.slugColumnName') => \Slug::build($row->$column)]);
             }
         } catch (Exception $e) {
             $this->error($e->getMessage());
