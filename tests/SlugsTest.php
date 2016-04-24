@@ -49,6 +49,9 @@ class SlugsTest extends TestCase
     public function testReplaceSpacesWithDelimiter(){
         $s = new Slugs('Replace all spaces', '_');
         $this->assertEquals('Replace_all_spaces', $s->replaceSpacesWithDelimiter()->slug);
+
+        $s = new Slugs('      Remove    multiple     spaces and trim  string    ', '_');
+        $this->assertEquals('Remove_multiple_spaces_and_trim_string', $s->replaceSpacesWithDelimiter()->slug);
     }
 
     public function testToLower(){
