@@ -15,8 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AlexeyMezenin\\LaravelRussianSlugs\\": "src/",
-            "AlexeyMezenin\\LaravelRussianSlugs\\Commands\\": "src/commands/"
+            "AlexeyMezenin\\LaravelRussianSlugs\\": "src/"
         }
     }
 }

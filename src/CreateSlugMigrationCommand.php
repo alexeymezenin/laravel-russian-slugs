@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexeyMezenin\LaravelRussianSlugs\Commands;
+namespace AlexeyMezenin\LaravelRussianSlugs;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Console\Migrations\BaseCommand;
