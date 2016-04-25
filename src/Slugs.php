@@ -71,7 +71,7 @@ class Slugs
      * @return $this
      */
     public function removeInappropriateSymbols(){
-        $this->slug = trim(preg_replace("/[^0-9а-яёa-z_-]/iu", '', $this->slug));
+        $this->slug = preg_replace('/[^0-9а-яёa-z_-]/iu', '', $this->slug);
 
         return $this;
     }

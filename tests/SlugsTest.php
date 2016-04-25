@@ -52,6 +52,10 @@ class SlugsTest extends TestCase
 
         $s = new Slugs('      Remove    multiple     spaces and trim  string    ', '_');
         $this->assertEquals('Remove_multiple_spaces_and_trim_string', $s->replaceSpacesWithDelimiter()->slug);
+
+        $s = new Slugs('  Trimming string with a special symbol at the end   ', '_');
+        $this->assertEquals('Trimming_string_with_a_special_symbol_at_the_end',
+                            $s->replaceSpacesWithDelimiter()->removeInappropriateSymbols()->slug);
     }
 
     public function testToLower(){
