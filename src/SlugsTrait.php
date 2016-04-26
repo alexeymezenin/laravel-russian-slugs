@@ -45,7 +45,7 @@ trait SlugsTrait
 
 		// If slug needs to be created
 		if (empty($this->$slugColumn) || $force) {
-			$this->$slugColumn = Slug::build($this->$column);
+			$this->$slugColumn = \Slug::build($this->$column);
 		}
 
 		return $this;

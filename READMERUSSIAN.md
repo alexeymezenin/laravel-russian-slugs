@@ -55,26 +55,26 @@ class Articles extends Model
     use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 ```
 
-Чтобы **создать новый объект** со слагом, используйте метод `sluggity()`. Например, этот код создаст слаг, основанный на колонке `name`:
+Чтобы **создать новый объект** со слагом, используйте метод `reslug()`. Например, этот код создаст слаг, основанный на колонке `name`:
 
 ```
 $article = new Article;
 $article->name = 'Как вырастить дерево?';
-$article->sluggify('name');
+$article->reslug('name');
 $article->save();
 ```
 
 Вы можете **добавить слаг** к существующему объекту модели:
 ```
 $article = Article::find(1);
-$article->sluggify('name');
+$article->reslug('name');
 $article->save();
 ```
 
 Если слаг уже существует и вы хотите сгенерировать его заново, используйте принудительную конвертацию:
 
 ```
-$article->sluggify('name', true);
+$article->reslug('name', true);
 ```
 
 Как альтернативу, вы можете использовать фасад `Slug` для того, чтобы работать со слагами вручную:

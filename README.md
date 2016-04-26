@@ -55,26 +55,26 @@ class Articles extends Model
     use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
 ```
 
-To **create new record** with a slug use `sluggity()` method. This will add slug, based on `name` column:
+To **create new record** with a slug use `reslug()` method. This will add slug, based on `name` column:
 
 ```
 $article = new Article;
 $article->name = 'How to grow a tree?';
-$article->sluggify('name');
+$article->reslug('name');
 $article->save();
 ```
 
 You can **update existing record** and add a slug:
 ```
 $article = Article::find(1);
-$article->sluggify('name');
+$article->reslug('name');
 $article->save();
 ```
 
-If slug already exists, but you need to recreate it, use forced sluggify:
+If slug already exists, but you need to recreate it, use forced reslug:
 
 ```
-$article->sluggify('name', true);
+$article->reslug('name', true);
 ```
 
 Alternatively, you can use `Slug` facade to manually work with slugs:
