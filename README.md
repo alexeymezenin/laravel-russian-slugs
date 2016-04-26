@@ -64,7 +64,7 @@ $article->sluggify('name');
 $article->save();
 ```
 
-You can **update existing model** and add a slug:
+You can **update existing record** and add a slug:
 ```
 $article = Article::find(1);
 $article->sluggify('name');
@@ -100,26 +100,26 @@ To configure a package you should edit `config/seoslugs.php` file.
 
 `delimiter` is a symbol which replaces all spaces in a string. By default it's '_', but also can be '-'.
 
-`urlType`
+`urlType` is a type of slug:
 
 Default is **1**. Used for URLs like `/категория/книги_в_москве`
 
-**2** is for traslitterated URLs like `/kategoriya/knigi_v_moskve`, Yandex rules used.
+**2** is for traslitterated URLs like `/kategoriya/knigi_v_moskve`, Yandex rules used to transliterate URL.
 
-`keepCapitals` is `false` by default. When `true` it keeps capital letters in a string, for example: `/книги_в_Москве`
+`keepCapitals` is `false` by default. When `true` it keeps capital letters in a slug, for example: `/книги_в_Москве`
 
-`slugColumnName` is a name of a slugs column. `slug` by default.
+`slugColumnName` contains the name of a slug column. `slug` by default.
 
 <a name="Commands"></a>
 ###Commands
 
-There are three commands available with the package:
+There are three commands available in the package:
 
 `php artisan slug:auto {table} {column}` command creates and executes migration, reslugs a table.
 
 `php artisan slug:migration {table}` command creates migration to add a slug column.
 
-`php artisan slug:reslug {table} {column}` command creating or recreating slugs for a specified table
+`php artisan slug:reslug {table} {column}` command creates or recreates slugs for a specified table.
 
 ###Copyright
 
