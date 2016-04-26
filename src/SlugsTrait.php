@@ -39,7 +39,7 @@ trait SlugsTrait
 	 * @param bool $force When true, forces recreation of a slug, even if it exists.
 	 * @return $this
 	 */
-	public function sluggify($column, $force = false)
+	public function reslug($column, $force = false)
 	{
 		$slugColumn = config('seoslug.slugColumnName');
 
