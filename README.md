@@ -108,7 +108,7 @@ Default is **1**. Used for URLs like `/категория/книги_в_моск
 
 `keepCapitals` is `false` by default. When `true` it keeps capital letters in a slug, for example: `/книги_в_Москве`
 
-`slugColumnName` contains the name of a slug column. `slug` by default.
+`slugColumnName` sets the name of a slug column. `slug` by default.
 
 <a name="Commands"></a>
 ###Commands

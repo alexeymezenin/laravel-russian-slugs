@@ -87,9 +87,9 @@ $article->update([
 
 Метод `findBySlug()` позволяет осуществлять поиск по слагу:
 ```
-$slug = 'how-to-grow-a-tree';
+$slug = 'как_вырастить_дерево';
 $article = Article::findBySlug($slug);
-echo $article->name; // Will output "How to grow a tree?"
+echo $article->name; // Результатом будет "Как вырастить дерево?"
 ```
 
 
@@ -98,6 +98,17 @@ echo $article->name; // Will output "How to grow a tree?"
 
 Все настройки пакета находятся в файле `config/seoslugs.php`
 
+`delimiter` символ разделения, которым заменяются все пробелы изначальной строки. По умолчанию '_', можно заменить на '-'.
+
+`urlType` типа слага:
+
+По умолчанию **1**. Строит слаги вида `/категория/книги_в_москве`
+
+**2** строит слаги вида `/kategoriya/knigi_v_moskve`, используются правила Яндекса для транслита.
+
+`keepCapitals` по умолчанию `false`. Когда `true`, прописные (большие) буквы не конвертируются в строчные: `/книги_в_Москве`
+
+`slugColumnName` задает имя колонки для слагов в таблице. `slug` по умолчанию.
 
 <a name="Commands"></a>
 ###Команды
