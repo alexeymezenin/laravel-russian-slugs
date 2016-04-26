@@ -121,6 +121,8 @@ There are three console commands available in the package:
 
 `php artisan slug:reslug {table} {column}` command creates or recreates slugs for a specified table.
 
+Commands `slug:auto` and `slug:reslug` will recreate all slugs, even if they are already exist (forced reslug used).
+
 ###Copyright
 
 RussianSeoSlugs was written by Alexey Mezenin and released under the MIT License.
