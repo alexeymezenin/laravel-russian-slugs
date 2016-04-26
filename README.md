@@ -55,7 +55,7 @@ class Articles extends Model
     use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
 ```
 
-To **create new model** with a slug use `sluggity()` method. This will add slug to your model, based on `name` column:
+To **create new record** with a slug use `sluggity()` method. This will add slug, based on `name` column:
 
 ```
 $article = new Article;
