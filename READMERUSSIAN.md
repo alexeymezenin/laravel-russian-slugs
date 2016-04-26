@@ -45,28 +45,26 @@ php artisan vendor:publish
 
 
 <a name="Using-slugs"></a>
-###Using slugs
+###Использование
 
 Чтобы использовать пакет, добавьте в свои модели трейт:
 
 ```
-use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
-
 class Articles extends Model
 {
-    use SlugTrait;
+    use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 ```
 
 Чтобы **создать новый объект** со слагом, используйте метод `sluggity()`. Например, этот код создаст слаг, основанный на колонке `name`:
 
 ```
 $article = new Article;
-$article->name = 'How to grow a tree?';
+$article->name = 'Как вырастить дерево?';
 $article->sluggify('name');
 $article->save();
 ```
 
-Вы можете **добавить слаг к существующей модели**:
+Вы можете **добавить слаг** к существующему объекту модели:
 ```
 $article = Article::find(1);
 $article->sluggify('name');
@@ -83,11 +81,11 @@ $article->sluggify('name', true);
 ```
 $article = Article::find(1);
 $article->update([
-    'slug' => Slug::url($article->name)
+    'slug' => Slug::build($article->name)
     ]);
 ```
 
-`findBySlug` позволяет осуществлять поиск по слагу:
+Метод `findBySlug()` позволяет осуществлять поиск по слагу:
 ```
 $slug = 'how-to-grow-a-tree';
 $article = Article::findBySlug($slug);
