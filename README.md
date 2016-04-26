@@ -1,6 +1,6 @@
 
 ###Introduction
-This package offers easy to use Wikipedia-like Russian slugs like 'Как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs and their variations with lowercased letters and different separators.
+This package offers easy to use cyrillic slugs like 'Как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs and their variations with lowercased letters and different separators.
 
 * [Installation](#Installation)
 * [Using slugs](#Using-slugs)
@@ -15,27 +15,30 @@ Start with editing your Laravel project's composer.json file to require package:
 
 ```
 "require": {
-    "alexeymezenin/laravel-russian-slugs": "0.*"
-}
+    ....
+    "alexeymezenin/laravel-russian-slugs": "0.9.*"
 ```
 
-After that update Composer by running this command:
+After that run this command to install package:
 
 ```
 composer update
 ```
 
-Now, add insert these two lines into provider and aliases arrays in `config/app.php`:
+Now, insert these two lines into provider and aliases arrays in `config/app.php`:
 
 ```
 'providers' => [
+    ....
     AlexeyMezenin\LaravelRussianSlugs\SlugsServiceProvider::class,
+    
 
 'aliases' => [
+    ....
     'Slug' => AlexeyMezenin\LaravelRussianSlugs\SlugsFacade::class,
 ```
 
-Finally, you need register config file and slug-related commands:
+Finally, you need to register config file and slugs-related commands by running:
 ```
 php artisan vendor:publish
 ```
@@ -44,14 +47,12 @@ php artisan vendor:publish
 <a name="Using-slugs"></a>
 ###Using slugs
 
-To use slugs you need to update your models with `use` clause:
+To use package, you need to update your models with this`use` clause:
 
 ```
-use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
-
 class Articles extends Model
 {
-    use SlugTrait;
+    use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
 ```
 
 To **create new model** with a slug use `sluggity()` method. This will add slug to your model, based on `name` column:
