@@ -113,9 +113,9 @@ Default is **1**. Used for URLs like `/категория/книги_в_моск
 <a name="Commands"></a>
 ###Commands
 
-There are three commands available in the package:
+There are three console commands available in the package:
 
-`php artisan slug:auto {table} {column}` command creates and executes migration, reslugs a table.
+`php artisan slug:auto {table} {column}` command creates and executes migration, reslugs a table (creates slugs for all rows) using {column} as source.
 
 `php artisan slug:migration {table}` command creates migration to add a slug column.
 
