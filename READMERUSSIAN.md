@@ -1,6 +1,6 @@
 
 ###Вступление
-Этот пакет позволяет использовать слаги (slugs) аналогичные используемым на сайте Wikipedia: 'Как\_вырастить\_дерево' или транслит по правилам Яндекса: 'kak-vyrastis-derevo', а также их вариации со строчными буквами с использованием различных символов разделения.
+Пакет позволяет использовать так называемые **слаги** (slugs), аналогичные используемым на сайте Wikipedia: 'Как\_вырастить\_дерево' или созданные с помощью правил транслита Яндекса: 'kak-vyrastis-derevo', а также их вариаций: со строчными буквами и использованием различных символов разделения.
 
 * [Установка](#Installation)
 * [Использование](#Using-slugs)
@@ -11,15 +11,15 @@
 <a name="Installation"></a>
 ###Установка
 
-Добавьте в файл composer.json вашего Laravel проекта в раздел require следующую строку:
+Добавьте в файл composer.json вашего Laravel проекта, в раздел require следующую строку:
 
 ```
 "require": {
-    "alexeymezenin/laravel-russian-slugs": "0.*"
-}
+    ....
+    "alexeymezenin/laravel-russian-slugs": "0.9.*"
 ```
 
-Запустите эту команду для установки пакета:
+Установите пакет:
 
 ```
 composer update
@@ -29,9 +29,12 @@ composer update
 
 ```
 'providers' => [
+    ....
     AlexeyMezenin\LaravelRussianSlugs\SlugsServiceProvider::class,
+    
 
 'aliases' => [
+    ....
     'Slug' => AlexeyMezenin\LaravelRussianSlugs\SlugsFacade::class,
 ```
 
