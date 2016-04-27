@@ -60,9 +60,12 @@ class SlugsServiceProvider extends ServiceProvider
     /**
      * Register Eloquent events.
      */
-    private function registerEvents(){
+    private function registerEvents()
+    {
         $this->app['events']->listen('eloquent.saving*', function ($model) {
-            if ($model->config('seoslug.slugColumnName')) {
+            $slugColumn = config('seoslug.slugColumnName');
+
+            if (property_exists($model, $model->$slugColumn)) {
                 $model->reslug();
             }
         });
