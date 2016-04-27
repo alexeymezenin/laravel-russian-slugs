@@ -40,9 +40,13 @@ trait SlugsTrait
 	 * @return $this
 	 */
 	
-	public function reslug($fromColumn = $this->slugFrom, $force = false)
+	public function reslug($fromColumn = false, $force = false)
 	{
 		$slugColumn = config('seoslug.slugColumnName');
+
+		if ($fromColumn === false) {
+			$fromColumn = $this->slugFrom;
+		}
 
 		// If slug needs to be created or recreated
 		if (empty($this->$slugColumn) || $force) {
