@@ -17,7 +17,7 @@ Start with editing your Laravel project's composer.json file to require package:
 ```
 "require": {
     ....
-    "alexeymezenin/laravel-russian-slugs": "0.9.*"
+    "alexeymezenin/laravel-russian-slugs": "0.*"
 ```
 
 After that run this command to install package:
