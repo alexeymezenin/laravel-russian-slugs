@@ -61,7 +61,11 @@ To use **auto slug creation** feature add `slugFrom` property to your model:
 protected $slugFrom = 'article_name';
 ```
 
-In this case, every time when you're saving data to a DB, package tries to create (but not recreate) a new slug and save it.
+In this case, every time when you're saving data to a DB, package tries to create (but not recreate) a new slug and save it:
+
+```
+$article = Article::create(['article_name' => 'Как вырастить дерево?']);
+```
 
 <a name="Manual-slug-creation"></a>
 ###Manual slug creation
