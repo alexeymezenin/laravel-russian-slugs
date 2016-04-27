@@ -67,6 +67,8 @@ In this case, every time when you're saving data to a DB, package tries to creat
 $article = Article::create(['article_name' => 'Как вырастить дерево?']);
 ```
 
+Of course, that doesn't work with mass inserts and updates when you're updating multiple rows with one query.
+
 <a name="Manual-slug-creation"></a>
 ###Manual slug creation
 
