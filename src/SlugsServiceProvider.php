@@ -49,4 +49,18 @@ class SlugsServiceProvider extends ServiceProvider
         // Register commands.
         $this->commands($this->commands);
     }
+
+    private function registerCommands()
+    {
+
+    }
+
+    private function registerEvent(){
+
+    }
+
+    private function handleConfig()
+    {
+
+    }
 }
