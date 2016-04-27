@@ -43,6 +43,8 @@ class SlugsServiceProvider extends ServiceProvider
 
         $this->registerEvents();
 
+        $this->registerCommands();
+
         App::bind('slug', function($app, $parameters)
         {
             return new \AlexeyMezenin\LaravelRussianSlugs\Slugs($parameters);
