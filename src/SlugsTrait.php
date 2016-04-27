@@ -33,20 +33,16 @@ trait SlugsTrait
 	}
 
 	/**
-	 * Create or recreates slugs in a column.
+	 * Create or recreate slugs in a column.
 	 *
-	 * @param $column Column to work with. String from this column will be converted to a slug.
+	 * @param $fromColumn Column to work with. String from this column will be converted to a slug.
 	 * @param bool $force When true, forces recreation of a slug, even if it exists.
 	 * @return $this
 	 */
 	
-	public function reslug($fromColumn = false, $force = false)
+	public function reslug($fromColumn = $this->slugFrom, $force = false)
 	{
 		$slugColumn = config('seoslug.slugColumnName');
-
-		if (!$fromColumn) {
-			$fromColumn = $this->slugFrom;
-		}
 
 		// If slug needs to be created or recreated
 		if (empty($this->$slugColumn) || $force) {

@@ -62,10 +62,9 @@ class SlugsServiceProvider extends ServiceProvider
      */
     private function registerEvents()
     {
+        // Create a slug each time when saving to a database, if it doesn't exist yet.
         $this->app['events']->listen('eloquent.saving*', function ($model) {
-            $slugColumn = config('seoslug.slugColumnName');
-
-            if (property_exists($model, $model->$slugColumn)) {
+            if (property_exists($model, 'slugFrom')) {
                 $model->reslug();
             }
         });
