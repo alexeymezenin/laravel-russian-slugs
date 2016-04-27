@@ -39,11 +39,12 @@ trait SlugsTrait
 	 * @param bool $force When true, forces recreation of a slug, even if it exists.
 	 * @return $this
 	 */
+	
 	public function reslug($column, $force = false)
 	{
 		$slugColumn = config('seoslug.slugColumnName');
 
-		// If slug needs to be created
+		// If slug needs to be created or recreated
 		if (empty($this->$slugColumn) || $force) {
 			$this->$slugColumn = \Slug::build($this->$column);
 		}
