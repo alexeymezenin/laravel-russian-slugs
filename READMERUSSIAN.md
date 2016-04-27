@@ -4,6 +4,7 @@
 
 * [Установка](#Installation)
 * [Использование](#Using-slugs)
+* [Создание слагов вручную](#Manual-slug-creation)
 * [Конфигурация](#Configuration)
 * [Команды](#Commands)
 
@@ -19,11 +20,13 @@
     "alexeymezenin/laravel-russian-slugs": "0.9.*"
 ```
 
+
 Установите пакет:
 
 ```
 composer update
 ```
+
 
 Затем добавьте эти строки в разделы provider и aliases файла `config/app.php`:
 
@@ -37,6 +40,7 @@ composer update
     ....
     'Slug' => AlexeyMezenin\LaravelRussianSlugs\SlugsFacade::class,
 ```
+
 
 Наконец, зарегистрируйте конфигурационный файл и команды с помощью:
 ```
@@ -54,6 +58,17 @@ class Articles extends Model
 {
     use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 ```
+
+Для **автоматического создания слагов** добавьте в модель переменную `slugFrom`, указывающую на колонку в таблице, на основании содержимого которой будет создаваться слаг:
+
+```
+protected $slugFrom = 'article_name';
+```
+
+В этом случае каждый раз, когда происходит запись модели в  таблицу, просиходит попытка генерации слага и, если он еще не создан, пакет создает его и записывает в таблицу.
+
+<a name="Manual-slug-creation"></a>
+###Создание слагов вручную
 
 Чтобы **создать новый объект** со слагом, используйте метод `reslug()`. Например, этот код создаст слаг, основанный на колонке `name`:
 
