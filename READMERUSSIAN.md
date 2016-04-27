@@ -17,7 +17,7 @@
 ```
 "require": {
     ....
-    "alexeymezenin/laravel-russian-slugs": "0.*"
+    "alexeymezenin/laravel-russian-slugs": "0.9.*"
 ```
 
 
