@@ -4,6 +4,7 @@ This package offers easy to use cyrillic slugs like 'Как\_вырастить\
 
 * [Installation](#Installation)
 * [Using slugs](#Using-slugs)
+* [Manual slug creation](#Manual-slug-creation)
 * [Configuration](#Configuration)
 * [Commands](#Commands)
 
@@ -43,7 +44,6 @@ Finally, you need to register config file and slugs-related commands by running:
 php artisan vendor:publish
 ```
 
-
 <a name="Using-slugs"></a>
 ###Using slugs
 
@@ -54,6 +54,17 @@ class Articles extends Model
 {
     use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
 ```
+
+To use **auto slug creation** feature add `slugFrom` property to your model:
+
+```
+protected $slugFrom = 'article_name';
+```
+
+In this case, every time when you're saving data to a DB, package tries to create (but not recreate) a new slug and save it.
+
+<a name="Manual-slug-creation"></a>
+###Manual slug creation
 
 To **create new record** with a slug use `reslug()` method. This will add slug, based on `name` column:
 
