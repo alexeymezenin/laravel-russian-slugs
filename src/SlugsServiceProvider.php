@@ -39,28 +39,40 @@ class SlugsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__.'/../config/seoslug.php', 'seoslug');
+        $this->handleConfig();
+
+        $this->registerEvents();
 
         App::bind('slug', function($app, $parameters)
         {
             return new \AlexeyMezenin\LaravelRussianSlugs\Slugs($parameters);
         });
+    }
 
-        // Register commands.
+    /**
+     * Register console commands.
+     */
+    private function registerCommands()
+    {
         $this->commands($this->commands);
     }
 
-    private function registerCommands()
-    {
-
+    /**
+     * Register Eloquent events.
+     */
+    private function registerEvents(){
+        $this->app['events']->listen('eloquent.saving*', function ($model) {
+            if ($model->config('seoslug.slugColumnName')) {
+                $model->reslug();
+            }
+        });
     }
 
-    private function registerEvent(){
-
-    }
-
+    /**
+     * Handle config.
+     */
     private function handleConfig()
     {
-
+        $this->mergeConfigFrom( __DIR__.'/../config/seoslug.php', 'seoslug');
     }
 }
