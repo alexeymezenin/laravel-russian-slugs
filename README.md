@@ -52,7 +52,7 @@ To use package, you need to update your models with this`use` clause:
 ```
 class Articles extends Model
 {
-    use \AlexeyMezenin\LaravelRussianSlugs\SlugTrait;
+    use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 ```
 
 To use **auto slug creation** feature add `slugFrom` property to your model:
