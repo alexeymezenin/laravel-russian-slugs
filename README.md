@@ -12,7 +12,7 @@ This package offers easy to use cyrillic slugs like 'Как\_вырастить\
 <a name="Installation"></a>
 ###Installation
 
-Start with editing your Laravel project's composer.json file to require package:
+Start with editing your Laravel project's composer.json file, add this line to the *require* section:
 
 ```
 "require": {
