@@ -55,6 +55,12 @@ class Articles extends Model
     use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 ```
 
+Then you need to create `slug` column in a migration:
+
+```
+$table->string('slug');
+```
+
 To use **auto slug creation** feature add `slugFrom` property to your model:
 
 ```
