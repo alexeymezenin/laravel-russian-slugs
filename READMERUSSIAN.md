@@ -59,6 +59,12 @@ class Articles extends Model
     use \AlexeyMezenin\LaravelRussianSlugs\SlugsTrait;
 ```
 
+Затем создайте поле `slug` в миграции:
+
+```
+$table->string('slug');
+```
+
 Для **автоматического создания слагов** добавьте в модель переменную `slugFrom`, указывающую на колонку в таблице, на основании содержимого которой будет создаваться слаг:
 
 ```
