@@ -1,4 +1,3 @@
-
 ### Introduction
 
 This package offers easy to use cyrillic slugs like 'Как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs and their variations with lowercased letters and different separators.
