@@ -1,5 +1,6 @@
 
-###Introduction
+### Introduction
+
 This package offers easy to use cyrillic slugs like 'Как\_вырастить\_дерево' and Yandex transliterated 'kak-vyrastis-derevo' slugs and their variations with lowercased letters and different separators.
 
 * [Installation](#Installation)
@@ -10,7 +11,8 @@ This package offers easy to use cyrillic slugs like 'Как\_вырастить\
 
 
 <a name="Installation"></a>
-###Installation
+
+### Installation
 
 Start with editing your Laravel project's composer.json file, add this line to the *require* section:
 
@@ -45,7 +47,8 @@ php artisan vendor:publish
 ```
 
 <a name="Using-slugs"></a>
-###Using slugs
+
+### Using slugs
 
 To use package, you need to update your models with this`use` clause:
 
@@ -76,7 +79,8 @@ $article = Article::create(['article_name' => 'Как вырастить дер�
 Of course, that doesn't work with mass inserts and updates when you're updating multiple rows with one query.
 
 <a name="Manual-slug-creation"></a>
-###Manual slug creation
+
+### Manual slug creation
 
 To **create new record** with a slug use `reslug()` method. This will add slug, based on `name` column:
 
@@ -117,7 +121,8 @@ echo $article->name; // Will output "How to grow a tree?"
 
 
 <a name="Configuration"></a>
-###Configuration
+
+### Configuration
 
 To configure a package you should edit `config/seoslugs.php` file.
 
@@ -134,7 +139,8 @@ Default is **1**. Used for URLs like `/категория/книги_в_моск
 `slugColumnName` sets the name of a slug column. `slug` by default.
 
 <a name="Commands"></a>
-###Commands
+
+### Commands
 
 There are three console commands available in the package:
 
@@ -146,6 +152,6 @@ There are three console commands available in the package:
 
 Commands `slug:auto` and `slug:reslug` will recreate all slugs, even if they are already exist (forced reslug used).
 
-###Copyright
+### Copyright
 
 RussianSeoSlugs was written by Alexey Mezenin and released under the MIT License.
