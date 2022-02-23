@@ -3,6 +3,7 @@
 namespace AlexeyMezenin\LaravelRussianSlugs;
 
 use Illuminate\Database\Migrations\MigrationCreator;
+use Illuminate\Filesystem\Filesystem;
 
 /**
  * Class SlugMigrationCreator
@@ -10,6 +11,12 @@ use Illuminate\Database\Migrations\MigrationCreator;
  */
 class SlugMigrationCreator extends MigrationCreator
 {
+    
+    public function __construct(Filesystem $files, $customStubPath = null)
+    {
+        parent::__construct($files, $customStubPath);
+    }
+    
     /**
      * Get the migration stub file.
      *
